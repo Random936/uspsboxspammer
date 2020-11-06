@@ -6,11 +6,13 @@
 To Install the box spammer, you first need to install node. This can be found on the nodejs website below. 
 https://nodejs.org/en/
 
-After this is installed, open a terminal window and go to the newly cloned directory. One in the directory, run the following command to install the required libraries.
+* After this is installed open a terminal window and go to the newly cloned directory. Once in the directory, run the following command to install the required libraries.
 ```
 npm install
 ```
 You should see the following.
-
 ![image](https://github.com/Random936/uspsboxspammer/blob/main/images/npminstall.PNG)
+
+When this is installed, you can run the program by going to the cloned directory
+
 ![Alt Text](https://github.com/Random936/uspsboxspammer/blob/main/images/programgif.gif)
