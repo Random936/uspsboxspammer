@@ -23,6 +23,5 @@ node index.js
 
 * Follow the onscreen instructions shown in the GIF below.
 * Once completed, your boxes should arrive within 3-5 business days.
-When this is installed, you can run the program by going to the cloned directory and running the following command.
 
 ![Alt Text](https://github.com/Random936/uspsboxspammer/blob/main/images/programgif.gif)
