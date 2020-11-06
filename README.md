@@ -6,7 +6,8 @@
 To Install the box spammer, you first need to install node. This can be found on the nodejs website below. 
 https://nodejs.org/en/
 
-* After this is installed, open a terminal window and go to the newly cloned directory. 
+* After this is installed, switch to a user that is not root so that chromium can run.
+* Open a terminal window and go to the newly cloned directory. 
 * Once in the directory, run the following command to install the required libraries.
 ```
 npm install
