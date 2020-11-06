@@ -3,7 +3,7 @@ const { Form } = require('enquirer')
 
 main()
 async function main() {
-    const browser = await puppeteer.launch({headless: false, slowMo: 0})
+    const browser = await puppeteer.launch()
     let userinfo = await createAccount(browser)
     let urlarray = await getPageUrls(browser)
     await addItemsToCart(browser, urlarray)
@@ -29,19 +29,17 @@ async function createAccount(browser) {
             {name: 'streetaddress', message: 'Street Address'},
             {name: 'city', message: 'City'},
             {name: 'state', message: 'State', initial: 'Use shortened version of state. (ex. NY)'},
-            {name: 'zipcode', message: 'Zip Code'},
         ]
     })
 
     userinfo = await prompt.run()
-    console.log(userinfo)
     const page = await browser.newPage()
 
     console.log(
-        "If this hangs, the information provided was invalid. Make sure to provide the following: \n" +
+        "If this hangs, the information provided was invalid. Make sure to provide the following: \n\n" +
         "Email address that has not been used on USPS\n" +
         "A valid address to ship the package to\n" +
-        "A password using the policy: 1 uppercase and lowercase letter, 8-50 characters, 1 number, cannot match username."
+        "A password using the policy: 1 uppercase and lowercase letter, 8-50 characters, 1 number, cannot match username.\n\n"
     )
     await page.goto('https://reg.usps.com/entreg/RegistrationAction_input', {waitUntil: 'networkidle2'})
 
@@ -78,7 +76,20 @@ async function createAccount(browser) {
         await page.waitForTimeout(1000)
         await page.click('#btn-submit')
     } catch {
-        console.log("ERROR: Invalid information supplied.")
+        
+        console.log("\n\nERROR: Invalid information supplied. The website returned the following:")
+
+        page.on('console', (msg) => {
+            console.log(msg._text)
+        })
+
+        await page.evaluate(function() {
+            let errorarray = document.querySelectorAll('span.error-txt-blk')
+            errorarray.forEach(loginerror => console.log(loginerror.innerText))
+            return;
+        })
+
+        await browser.close()
         process.exit(1)
     }
     
