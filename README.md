@@ -13,4 +13,4 @@ npm install
 You should see the following.
 
 ![image](https://github.com/Random936/uspsboxspammer/blob/main/images/npminstall.PNG)
-![Alt Text](https://github.com/Random936/uspsboxspammer/blob/main/images/programgif.GIF)
+![Alt Text](https://github.com/Random936/uspsboxspammer/blob/main/images/programgif.gif)
