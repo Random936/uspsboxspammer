@@ -11,4 +11,5 @@ After this is installed, open a terminal window and go to the newly cloned direc
 npm install
 ```
 You should see the following.
+
 ![image](https://github.com/Random936/uspsboxspammer/blob/main/images/npminstall.PNG)
