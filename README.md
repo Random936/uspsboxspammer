@@ -25,3 +25,6 @@ node index.js
 * Once completed, your boxes should arrive within 3-5 business days.
 
 ![Alt Text](https://github.com/Random936/uspsboxspammer/blob/main/images/programgif.gif)
+
+## Information
+This tool was created to automatically send 53 different types of USPS branded boxes, with the maximum quantities to any address (about 500 boxes,envelopes,and letters). USPS currently offers free shipping materials, with a very large maximum quantity. I created this tool in Node, for simplicity of use, and to easily manipulate the elements if required. Feel free to contact me with any questions or feature requests.
