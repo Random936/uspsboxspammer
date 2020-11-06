@@ -180,10 +180,13 @@ async function checkoutCart(browser, userinfo) {
     page.goto('https://store.usps.com/store/cart/cart.jsp')
     
     await page.waitForNavigation({waitUntil: 'networkidle2'})
+    await page.waitForTimeout(1000)
     await page.click('#atg_store_checkout')
     await page.waitForNavigation({waitUntil: 'networkidle2'})
+    await page.waitForTimeout(1000)
     await page.click('a[class="btn-primary ship-to-this-address-btn"]')
     await page.waitForNavigation({waitUntil: 'networkidle2'})
+    await page.waitForTimeout(1000)
     await page.click('#placeMyOrderBtn')
     await page.waitForTimeout(1000)
     await page.click('#agree')
